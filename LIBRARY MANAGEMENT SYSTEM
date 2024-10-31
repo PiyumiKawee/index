@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        background-image: url("image12.jpg");
+      }
+      .btn{
+        text-align: center;
+        background-color: rosybrown;
+      }
+      h1{
+        text-align: center;
+        color: darkblue;
+      }
+    </style>
+    <script>
+      function validateForm(){
+        const id=document.forms["book_issue"]["BOOK_ID"].value;
+        const isbn=document.forms["book_issue"]["ISBN"].value;
+        const title=document.forms["book_issue"]["Title"].value;
+        const author=document.forms["book_issue"]["Author"].value;
+        const member_id=document.forms["book_issue"]["Member_ID"].value;
+        const member_name=document.forms["book_issue"]["Member_Name"].value;
+        const issueDate=document.forms["book_issue"]["Issue_Date"].value;
+        const dueDate=document.forms["book_issue"]["Due_Date"].value;
+
+        if(id===""){
+          alert("Please enter the book ID");
+          return false;
+        }
+
+        if(isbn===""){
+          alert("Please enter the ISBN");
+          return false;
+        }
+
+        if(title===""){
+          alert("Please enter the book title");
+          return false;
+        }
+
+        if(author===""){
+          alert("Please enter the Author name");
+          return false;
+        }
+
+        if(member_id===""){
+          alert("Please enter the Member ID");
+          return false;
+        }
+
+        if(member_name===""){
+          alert("Please enter the Member Name");
+          return false;
+        }
+
+        if(issueDate===""){
+          alert("Please enter the Issue date");
+          return false;
+        }
+
+        if(dueDate===""){
+          alert("Please enter the Due date");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <form name="book_issue" action="book_issue.php" method="POST" onsubmit="return validateForm()">
+      <div class="form_container">
+        <h1>BOOK ISSUE</h1>
+        <table border="2" align="center" cellpadding="5" cellspacing="5">
+          <tr>
+            <td>BOOK ID:</td>
+            <td><input type="text" name="BOOK_ID"></td>
+          </tr>
+
+          <tr>
+            <td>ISBN:</td>
+            <td><input type="text" name="ISBN"></td>
+          </tr>
+
+          <tr>
+            <td>Title:</td>
+            <td><input type="text" name="Title"></td>
+          </tr>
+
+          <tr>
+            <td>Author:</td>
+            <td><input type="text" name="Author"></td>
+          </tr>
+
+          <tr>
+            <td>Member ID:</td>
+            <td><input type="text" name="Member_ID"></td>
+          </tr>
+
+          <tr>
+            <td>Member Name:</td>
+            <td><input type="text" name="Member_Name"></td>
+          </tr>
+
+          <tr>
+            <td>Issue Date:</td>
+            <td><input type="date" name="Issue_Date"></td>
+          </tr>
+
+          <tr>
+            <td>Due Date:</td>
+            <td><input type="date" name="Due_Date"></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><button type="submit" class="btn">Issue Book</button></td>
+          </tr>
+        </table>
+      </div>
+    </form>
+  </body>
+</html>
